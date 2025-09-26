@@ -1,0 +1,393 @@
+/*-----------------------
+General Styles
+-----------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/*-----------------------
+Navigation
+-----------------------*/
+nav {
+    background-color: black;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: red;
+}
+
+/*-----------------------
+Hero Section
+-----------------------*/
+/* Hero Layout */
+#hero {
+    background: red;
+    padding: 6rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Flexbox for image + text */
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap; /* makes it stack on small screens */
+}
+
+/* Hero Image Styling */
+.hero-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;        /* makes it circular */
+    border: 4px solid white;   /* white border */
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8); /* glowing red effect */
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+/* Hover Effect */
+.hero-img:hover {
+    transform: scale(1.1); /* zooms slightly */
+    box-shadow: 0 0 40px rgba(255, 0, 0, 1); /* stronger glow */
+}
+
+/* Hero Text */
+.hero-text h1 {
+    font-size: 3rem;
+    color: white;
+}
+
+.hero-text .name {
+    color: black;
+    background: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    color: #f9f9f9;
+}
+
+
+/* Hero Layout */
+#hero {
+    background: red;
+    padding: 6rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Flexbox for image + text */
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap; /* makes it stack on small screens */
+}
+
+/* Hero Image Styling */
+.hero-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;        /* makes it circular */
+    border: 4px solid white;   /* white border */
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8); /* glowing red effect */
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+/* Hover Effect */
+.hero-img:hover {
+    transform: scale(1.1); /* zooms slightly */
+    box-shadow: 0 0 40px rgba(255, 0, 0, 1); /* stronger glow */
+}
+
+/* Hero Text */
+.hero-text h1 {
+    font-size: 3rem;
+    color: white;
+}
+
+.hero-text .name {
+    color: black;
+    background: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    color: #f9f9f9;
+}
+
+/* new */
+/* Button */
+button {
+    padding: 12px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: white;
+    color: red;
+    box-shadow: 0 0 20px red, 0 0 40px red;
+} 
+
+/*-----------------------
+Sections
+-----------------------*/
+section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+section h2 {
+    color: red;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+/*-----------------------
+Portfolio Projects
+-----------------------*/
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #1a1a1a;
+    color: white;
+    border: 2px solid red;
+    border-radius: 10px;
+    width: 400px;
+    padding: 15px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card video {
+    width: 100%;
+    height: 230px;
+    border-radius: 8px;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(255,0,0,0.5);
+}
+
+.project-card:video {
+    transform: scale(1.1);
+}
+
+.project-card h3 {
+    color: red;
+    margin: 0.5rem 0;
+}
+
+.project-card p {
+    color: white;
+    padding: 0 0.5rem 1rem 0.5rem;
+}
+
+.controls {
+  margin-top: 10px;
+}
+
+button {
+  margin: 5px;
+  padding: 6px 14px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+
+/*-----------------------
+Contact Form
+-----------------------*/
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+input, textarea {
+    padding: 0.5rem;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid red;
+    background-color: #1a1a1a;
+    color: white;
+    transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: white;
+    outline: none;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: white;
+    color: red;
+}
+
+/*-----------------------
+Footer
+-----------------------*/
+footer {
+    background-color: #111;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+}
+
+/*-----------------------
+Responsive
+-----------------------*/
+/*@media (max-width: 768px) {
+    .project-grid {
+       grid-template-columns: 1fr;
+       gap: 20px;
+       justify-items: center;
+    }
+}*/
+/* =========================
+   Mobile Responsive CSS
+   ========================= */
+@media (max-width: 768px) {
+
+  /* Navbar */
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+  }
+
+  nav ul li {
+    padding: 8px 12px;
+    font-size: 20px;
+    color: white;
+    margin: 5px 0;
+  }
+
+  /* Hero section */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .hero img {
+    max-width: 150px;
+    margin-bottom: 15px;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  /* Project grid */
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-items: center;
+  }
+
+  /* Project card */
+  .project-card {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .project-card video {
+    width: 100%;
+    height: auto;   /* keep aspect ratio */
+    border-radius: 8px;
+  }
+
+  .project-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .project-card p {
+    font-size: 0.9rem;
+  }
+
+  /* Buttons */
+  button {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  /* Footer */
+  footer {
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+}

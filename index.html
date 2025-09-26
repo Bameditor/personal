@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bameditor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+  <div class="hero-content">
+    <div class="hero-img-container">
+      <img src="logo img 1.jpg" alt="My Photo" class="hero-img">
+    </div>
+    <div class="hero-text">
+      <h1>Hello, I’m <span class="name">Bam Editor</span></h1>
+      <p>I’m a Video Creator and Editor</p>
+    </div>
+  </div>
+</section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hey, I'm Bameditor. I'm really into video editing , I love taking clips and turning them into something creative and fun. When I'm not editing. you'll usually find me gaming,reaing novels. I enjoy exploring new ideas, learning cool skills, and just creating things that stand out.
+        </p>
+    </section>
+
+    <!-- Portfolio Section -->
+      <div class="project-grid">
+  <!-- Project 1 -->
+  <div class="project-card">
+    <h3>Project 1</h3>
+    <p>PRESET ALIGHT MOTION ||💝 SPECIAL VIDEO 314 SUBSCRIBE || 💝RANDOM ANIME ||</p>
+    <video id="video1" class="video-box" controls>
+      <source src="video 1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <br>
+    <button onclick="playVideo('video1')">Play</button>
+    <button onclick="pauseVideo('video1')">Pause</button>
+  </div>
+
+  <!-- Project 2 -->
+  <div class="project-card">
+    <h3>Project 2</h3>
+    <p>PRESET ALIGHT MOTION ||💝 SPECIAL VIDEO 314 SUBSCRIBE || 💝RANDOM ANIME ||</p>
+    <video id="video2" class="video-box" controls>
+      <source src="video 2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <br>
+    <button onclick="playVideo('video2')">Play</button>
+    <button onclick="pauseVideo('video2')">Pause</button>
+  </div>
+</div>
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="vishwa666.mv@gmail.com" method="post" enctype="text/plain">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
