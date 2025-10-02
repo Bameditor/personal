@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bameditor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+  <!-- Google Login Button -->
+  <button id="googleLoginBtn">Sign in with Google</button>
+
+  <!-- Show user info after login -->
+  <div id="userInfo" style="display:none;">
+    <img id="userPic" width="50" />
+    <p id="userName"></p>
+    <p id="userEmail"></p>
+    <button id="logoutBtn">Logout</button>
+  </div>
+
+  <!-- Firebase + Auth SDK -->
+  <script type="module">
+    // Import Firebase SDKs
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-app.js";
+    import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "https://www.gstatic.com/firebasejs/10.13.1/firebase-auth.js";
+
+    // Your Firebase config
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCGB1HAIy2w2ZfdVvjeP_h2Sb-7AbLhbo4",
+  authDomain: "bameditor-personal.firebaseapp.com",
+  databaseURL: "https://bameditor-personal-default-rtdb.firebaseio.com",
+  projectId: "bameditor-personal",
+  storageBucket: "bameditor-personal.firebasestorage.app",
+  messagingSenderId: "479857808133",
+  appId: "1:479857808133:web:458eff266c9b0235b49d6c",
+  measurementId: "G-H7L6SEHWM0"
+};
+
+    // Init Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+
+    // Elements
+    const loginBtn = document.getElementById("googleLoginBtn");
+    const logoutBtn = document.getElementById("logoutBtn");
+    const userInfo = document.getElementById("userInfo");
+    const userPic = document.getElementById("userPic");
+    const userName = document.getElementById("userName");
+    const userEmail = document.getElementById("userEmail");
+
+    // Login with Google
+    loginBtn.addEventListener("click", () => {
+      signInWithPopup(auth, provider)
+        .then(result => {
+          const user = result.user;
+          userInfo.style.display = "block";
+          userPic.src = user.photoURL;
+          userName.textContent = user.displayName;
+          userEmail.textContent = user.email;
+          loginBtn.style.display = "none";
+        })
+        .catch(err => alert(err.message));
+    });
+
+    // Logout
+    logoutBtn.addEventListener("click", () => {
+      signOut(auth).then(() => {
+        userInfo.style.display = "none";
+        loginBtn.style.display = "inline-block";
+      });
+    });
+  </script>
+
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+  <div class="hero-content">
+    <div class="hero-img-container">
+      <img src="logo img 1.jpg" alt="My Photo" class="hero-img">
+    </div>
+    <div class="hero-text">
+      <h1>Hello, I’m <span class="name">Bam Editor</span></h1>
+      <p>I’m a Video Creator and Editor</p>
+    </div>
+  </div>
+</section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hey, I'm Bameditor. I'm really into video editing , I love taking clips and turning them into something creative and fun. When I'm not editing. you'll usually find me gaming,reaing novels. I enjoy exploring new ideas, learning cool skills, and just creating things that stand out.
+        </p>
+    </section>
+
+    <!-- Portfolio Section -->
+      <div class="project-grid"></div>
+
+ <!--playlist-->
+ 
+<section class="playlist-section">
+  <h2>Playlists</h2>
+  <div class="playlist-grid">
+
+    <a href="playlist1.html" class="playlist-item">
+      <img src="playlist img1.jpeg" alt="AMV Typography">
+      <div class="playlist-details">
+        <h3>AMV Typography</h3>
+        <p>View full playlist</p>
+      </div>
+    </a>
+
+    <a href="playlist2.html" class="playlist-item">
+      <img src="thumbnail1.jpeg" alt="Preset Full Beat">
+      <div class="playlist-details">
+        <h3>Preset full beat</h3>
+        <p>View full playlist</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="https://formspree.io/f/xblzoppz" method="post">
+            <input type="text" name="Name" placeholder="Your Name" required>
+            <input type="email" name="Email" placeholder="Your Email" required>
+            <textarea name="Message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
